@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Active" max_length="40" name="u_active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional comments" max_length="1000" name="u_additionalcomments" type="string"/>
+        <element label="Created by" max_length="32" name="u_createdby" reference="sys_user" type="reference"/>
+        <element label="Created" max_length="40" name="u_created_date" type="glide_date_time"/>
+        <element label="Opened by" max_length="32" name="u_opened_by" reference="sys_user" type="reference"/>
+        <element label="Opened" max_length="40" name="u_opened_date" type="glide_date_time"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="HR" sequence="0" value="hr"/>
+                <element label="Facility" sequence="1" value="facility"/>
+                <element label="Legal" sequence="2" value="legal"/>
+                <element label="Your Department" sequence="3" value="your_choice"/>
+            </choice>
+        </element>
+        <element label="Updated by" max_length="32" name="u_updatedby" reference="sys_user" type="reference"/>
+        <element label="Updated" max_length="40" name="u_updated_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal 1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="HR 1" sequence="0" value="hr 1"/>
+                <element label="HR 2" sequence="1" value="hr 2"/>
+                <element label="Facility 1" sequence="2" value="facility 1"/>
+                <element label="Facility 2" sequence="3" value="facility 2"/>
+                <element label="Legal 1" sequence="4" value="legal 1"/>
+                <element label="Legal 2" sequence="5" value="legal 2"/>
+                <element label="Your choice 1" sequence="6" value="your choice 1"/>
+                <element label="Your choice 2" sequence="7" value="your choice 2"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
